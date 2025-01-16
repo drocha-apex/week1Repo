@@ -1,25 +1,26 @@
 name: Go Syntax Check
 
 on:
-    push:
+  push: 
 
 jobs:
-    syntax-check:
-        runs-on: ubuntu-latest
-        steps:
-          - name: checkout code
-            uses: actions/checkout@v2
+  syntax-check:
+    runs-on: ubuntu-latest
 
-          - name: Setup Go env
-            uses: actions/setup-go@v4
-            with:
-              go-version: 1.23.4
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-          - name: go tidy
-            run: go mod tidy -v
+      - name: Setup Go environment
+        uses: actions/setup-go@v4
+        with:
+          go-version: 1.23.4 
 
-          - name: Check formatting 
-            run: test -z "$(gofmt -l .)"
+      - name: Go tidy
+        run: go mod tidy -v 
+
+      - name: Check formatting
+        run: test -z "$(gofmt -l .)"
 
         
         
