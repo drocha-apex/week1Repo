@@ -19,5 +19,5 @@ jobs:
       - name: Go tidy
         run: go mod tidy -v 
 
-#- name: Check formatting
-#run: test -z "$(gofmt -l .)"
+      - name: Check formatting
+        run: test -z "$(gofmt -l .)"
