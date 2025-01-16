@@ -1,0 +1,13 @@
+name: Go Syntax Check
+
+on: [push]
+
+jobs:
+	syntax-check:
+		runs-on: ubuntu-latest
+		steps:
+			- name: step one
+				
+			uses: actions/checkout@v2
+
+			
